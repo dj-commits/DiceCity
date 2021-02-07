@@ -6,8 +6,7 @@ import java.util.Map;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
 
 /**
  * This is the most basic entity class.

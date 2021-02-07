@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.BlackHoleInstance;
-import com.slyvronline.game.objects.Ent;
-import com.slyvronline.game.objects.Menu;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.objects.Ent;
+import com.dicecity.objects.Menu;
+import com.dicecity.utils.GameConstants;
 
 public class GameMenu extends Menu{
 
@@ -27,14 +26,14 @@ public class GameMenu extends Menu{
 		
 		Ent timer = new Ent();
 		timer.setName("timer");
-		timer.setFont(Game.getGlobal().getFontByName("leckerli24"));
+		//timer.setFont(Game.getGlobal().getFontByName("leckerli24"));
 		timer.setText("Timer: "+GameConstants.MAX_TIMER);
 		timer.setPosBox(new Rectangle(100,Gdx.graphics.getHeight() - 100,0,0));
 		ents.add(timer);
 		
 		Ent score = new Ent();
 		score.setName("score");
-		score.setFont(Game.getGlobal().getFontByName("leckerli24"));
+		//score.setFont(Game.getGlobal().getFontByName("leckerli24"));
 		score.setText("Score: 0");
 		score.setPosBox(new Rectangle(100,Gdx.graphics.getHeight() - 150,0,0));
 		ents.add(score);
@@ -86,7 +85,7 @@ public class GameMenu extends Menu{
 		
 		Ent greatScore = new Ent();
 		greatScore.setName("greatScore");
-		greatScore.setFont(Game.getGlobal().getFontByName("leckerli30"));
+		//greatScore.setFont(Game.getGlobal().getFontByName("leckerli30"));
 		greatScore.setText("Great Score!");
 		greatScore.setPosBox(new Rectangle(btnReplay.getX(),
 				timeup.getY()+100,0,0));
@@ -97,9 +96,9 @@ public class GameMenu extends Menu{
 	}
 	
 	public void update (float stateTime){
-		if (Game.getGlobal().getGame() == null){
+		/*if (Game.getGlobal().getGame() == null){
 			Game.getGlobal().setGame(new BlackHoleInstance());
-		}
+		}*/
 		
 		//cycleChevronBg();
 		buttonDeselect();

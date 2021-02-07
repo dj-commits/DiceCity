@@ -1,10 +1,10 @@
-package com.slyvronline.game.load;
+package com.dicecity.load;
 
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.AudioTrack;
+import com.dicecity.Game;
+import com.dicecity.objects.AudioTrack;
 
 public class LoadMusic {
 

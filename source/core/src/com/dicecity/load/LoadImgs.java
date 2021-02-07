@@ -1,4 +1,4 @@
-package com.slyvronline.game.load;
+package com.dicecity.load;
 
 import java.util.ArrayList;
 
@@ -6,9 +6,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.Img;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.objects.Img;
+
 
 /**
  * This class creates new Img classes to an arraylist containing a searchable name and the image data

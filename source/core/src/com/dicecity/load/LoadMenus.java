@@ -1,15 +1,13 @@
-package com.slyvronline.game.load;
+package com.dicecity.load;
 
 import java.util.ArrayList;
 
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.Menu;
-import com.slyvronline.game.objects.menus.CreditsMenu;
-import com.slyvronline.game.objects.menus.GameMenu;
-import com.slyvronline.game.objects.menus.GameSelectMenu;
-import com.slyvronline.game.objects.menus.LevelEditMenu;
-import com.slyvronline.game.objects.menus.MainMenu;
-import com.slyvronline.game.objects.menus.SplashMenu;
+import com.dicecity.Game;
+import com.dicecity.objects.Menu;
+import com.dicecity.objects.menus.MainMenu;
+import com.dicecity.objects.menus.SplashMenu;
+
+
 
 /**
  * This class loads the in game menu screens and populates them with 
@@ -24,10 +22,6 @@ public class LoadMenus {
 		
 		menus.add(new SplashMenu());
 		menus.add(new MainMenu());
-		menus.add(new CreditsMenu());
-		menus.add(new GameSelectMenu());
-		menus.add(new GameMenu());
-		menus.add(new LevelEditMenu());
 		
 		Game.getGlobal().setMenus(menus);
 		Game.getGlobal().setCurrentMenu(menus.get(0));

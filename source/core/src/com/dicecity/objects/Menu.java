@@ -5,12 +5,11 @@ import java.util.ArrayList;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.controllers.Controller;
-import com.badlogic.gdx.controllers.PovDirection;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.controllers.Xbox360Controller;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.utils.GameConstants;
+
 
 /**
  * This class maintains all the data and entities required in a menu
@@ -69,10 +68,6 @@ public class Menu {
 	
 	public void buttonDeselect(){
 		
-	}
-	
-	public void updateControllerPOV(Controller controller, int povCode, PovDirection value){
-		//System.out.println(controller.getName()+" - "+povCode+" - "+value);
 	}
 	
 	public void updateControllerAxis(Controller controller, int axisCode, float value){
@@ -141,15 +136,6 @@ public class Menu {
 			}
 			selected.setSelected(false);
 			if (this.getEntById(nextId) != null) this.getEntById(nextId).setSelected(true);
-		}
-	}
-	
-	public void updateControllerButtonDown(Controller controller, int buttonCode){
-		if (buttonCode == Xbox360Controller.BUTTON_A){
-			buttonSelect();
-		}
-		if (buttonCode == Xbox360Controller.BUTTON_B){
-			buttonDeselect();
 		}
 	}
 	

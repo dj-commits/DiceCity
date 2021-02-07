@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.objects.ents.Consumable;
 
 /**
  * This class is the main source for everything to be loaded and where resources are pulled out.
@@ -39,8 +38,6 @@ public class Global {
 	
 	private float stateTime;
 	
-	private ArrayList<Consumable> consumables;
-	
 	public Global(){
 		stateTime = 0f;
 		batch = new SpriteBatch();
@@ -57,11 +54,11 @@ public class Global {
 			if (track.getName().equals(name)) return track;
 		return null;
 	}
-	public Font getFontByName(String name){
+	/*public Font getFontByName(String name){
 		for(Font font : fonts)
 			if (font.getName().equals(name)) return font;
 		return null;
-	}
+	}*/
 	public Menu getMenuByName(String name){
 		for(Menu menu : menus)
 			if (name.equals(menu.getName())) return menu;
@@ -167,15 +164,5 @@ public class Global {
 	public void setStateTime(float stateTime) {
 		this.stateTime = stateTime;
 	}
-	public ArrayList<Consumable> getConsumables() {
-		return consumables;
-	}
-	public void setConsumables(ArrayList<Consumable> consumables) {
-		this.consumables = consumables;
-	}
-	public Consumable getConsumableByName(String name){
-		for(Consumable c : consumables)
-			if (c.getName().equals(name)) return c;
-		return null;
-	}
+
 }

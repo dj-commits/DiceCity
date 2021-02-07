@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.Ent;
-import com.slyvronline.game.objects.Menu;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.objects.Ent;
+import com.dicecity.objects.Menu;
+import com.dicecity.utils.GameConstants;
+
 
 public class SplashMenu extends Menu{
 
@@ -50,13 +51,13 @@ public class SplashMenu extends Menu{
 	
 	public void update(float stateTime){
 		
-		cycleChevronBg();
+		/*cycleChevronBg();
 		
 		if (startMillis==0) startMillis = System.currentTimeMillis();
 		else{
 			if (startMillis+GameConstants.SPLASH_MENU_WAIT<=System.currentTimeMillis()){
 				Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("main"));
 			}
-		}
+		}*/
 	}
 }

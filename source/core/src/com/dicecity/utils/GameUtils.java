@@ -1,4 +1,4 @@
-package com.slyvronline.game.utils;
+package com.dicecity.utils;
 
 import java.io.StringReader;
 
@@ -9,7 +9,6 @@ import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.objects.Ent;
 
 public class GameUtils {
 

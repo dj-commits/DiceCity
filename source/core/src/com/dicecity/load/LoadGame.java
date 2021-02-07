@@ -1,4 +1,4 @@
-package com.slyvronline.game.load;
+package com.dicecity.load;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -6,10 +6,9 @@ import java.util.Random;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.GameInstance;
-import com.slyvronline.game.objects.Img;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.objects.GameInstance;
+
 
 public class LoadGame extends Thread{
 
@@ -32,8 +31,9 @@ public class LoadGame extends Thread{
 			Game.getGlobal().setGame(gameInst);
 		}
 		catch(Exception ex){
-			Game.writeLog("exception", ex);
-			ex.printStackTrace();
+			System.out.println("Hello I'm the exception clause.");
+			/*Game.writeLog("exception", ex);
+			ex.printStackTrace();*/
 		}
 	}
 

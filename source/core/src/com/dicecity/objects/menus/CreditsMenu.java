@@ -6,11 +6,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.controllers.Xbox360Controller;
-import com.slyvronline.game.objects.Ent;
-import com.slyvronline.game.objects.Menu;
-import com.slyvronline.game.utils.GameConstants;
+import com.dicecity.Game;
+import com.dicecity.objects.Ent;
+import com.dicecity.objects.Menu;
 
 public class CreditsMenu extends Menu{
 

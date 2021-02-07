@@ -8,21 +8,16 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.Ent;
-import com.slyvronline.game.objects.Menu;
-import com.slyvronline.game.objects.ents.Consumable;
-import com.slyvronline.game.objects.ents.*;
-import com.slyvronline.game.utils.GameConstants;
-import com.slyvronline.game.utils.GameUtils;
+import com.dicecity.Game;
+import com.dicecity.objects.Ent;
+import com.dicecity.objects.Menu;
+import com.dicecity.utils.GameConstants;
+import com.dicecity.utils.GameUtils;
 
 public class MainMenu extends Menu{
 	
-	ArrayList<Consumable> consumes;
-	
 	public MainMenu(){
 		load();
-		consumes = new ArrayList<Consumable>();
 	}
 	
 	public void load(){
@@ -42,17 +37,6 @@ public class MainMenu extends Menu{
 		*/
 		
 		ents.addAll(buildChevronBG());
-		
-		Ent blackhole = new Ent();
-		blackhole.setName("blackhole");
-		blackhole.setImg(Game.getGlobal().getImgByName("blackhole-icon"));
-		blackhole.setPosBox(new Rectangle(
-				Gdx.graphics.getWidth()/2 - blackhole.getImg().getTex().getWidth()*3/2,
-				Gdx.graphics.getHeight()/2 - blackhole.getImg().getTex().getHeight()*3/2,
-				blackhole.getImg().getTex().getWidth()*3,
-				blackhole.getImg().getTex().getHeight()*3));
-		blackhole.setFlipX(true);
-		ents.add(blackhole);
 		
 		Ent logoTitle = new Ent();
 		logoTitle.setName("logoTitle");
@@ -94,7 +78,7 @@ public class MainMenu extends Menu{
 				btnExit.getImg().getTex().getHeight()));
 		ents.add(btnExit);
 		
-		Ent btnLevelEditor = new Ent();
+		/*Ent btnLevelEditor = new Ent();
 		btnLevelEditor.setName("btnLevelEditor");
 		btnLevelEditor.setId(4);
 		btnLevelEditor.setImg(Game.getGlobal().getImgByName("btnLevelEditor"));
@@ -104,11 +88,11 @@ public class MainMenu extends Menu{
 				btnLevelEditor.getImg().getTex().getHeight()));
 		if (Game.getConfig("loadLevelEdit").equals("true")){
 			ents.add(btnLevelEditor);
-		}
+		}*/
 		
 		Ent highScore = new Ent();
 		highScore.setName("highScore");
-		highScore.setFont(Game.getGlobal().getFontByName("leckerli30"));
+		//highScore.setFont(Game.getGlobal().getFontByName("leckerli30"));
 		highScore.setText("High Score: ");
 		highScore.setPosBox(new Rectangle(100,100,0,0));
 		ents.add(highScore);
@@ -123,9 +107,6 @@ public class MainMenu extends Menu{
 			if (e.getName().contains("chevron") || e.getName().contains("blackhole"))
 				e.render(batch);
 		}
-		for(Consumable e : consumes){
-			e.render(batch);
-		}
 		for(Ent e : this.getEnts()){
 			if (!e.getName().contains("chevron") && !e.getName().contains("blackhole"))
 				e.render(batch);
@@ -136,11 +117,6 @@ public class MainMenu extends Menu{
 		updateKeyboardNavigation();
 		updateKeyboardSelect();
 		cycleChevronBg();
-		
-		Ent blackhole = this.getEntByName("blackhole");
-		blackhole.setRotation(blackhole.getRotation() + 1.0f);
-		
-		updateConsumableAnimation();
 	}
 	
 	public void buttonSelect(){
@@ -182,47 +158,6 @@ public class MainMenu extends Menu{
 		this.getEntByName("highScore").setText("High Score: "+highScore);
 	}
 	
-	public void updateConsumableAnimation(){
-		for(int i=consumes.size()-1; i>=0; i--){
-			Consumable e = consumes.get(i);
-			e.setRotation(e.getRotation() + 1);
-			if (e.getX() != Gdx.graphics.getWidth()/2 && e.getY() != Gdx.graphics.getHeight()/2){
-				int[] nextPoint = GameUtils.getNextLinePoint((int)e.getX(), (int)e.getY(), Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2);
-				e.setX(nextPoint[0]);
-				e.setY(nextPoint[1]);
-			}
-			else{
-				consumes.remove(i);
-			}
-		}
-		if (consumes.size()<10){
-			int randInt = new Random().nextInt(10);
-			Consumable e = new House1();
-			if (randInt == 1){
-				e = new Flowers();
-			}
-			else if (randInt == 2){
-				e = new Man1();
-			}
-			else if (randInt == 3){
-				e = new Tree2();
-			}
-			else if (randInt == 4){
-				e = new Dog();
-			}
-			else if (randInt == 5){
-				e = new Building1();
-			}
-			else if (randInt == 6){
-				e = new Stoplight();
-			}
-			int randX = new Random().nextInt(Gdx.graphics.getWidth());
-			int randY = new Random().nextInt(Gdx.graphics.getHeight());
-			e.setX(randX);
-			e.setY(randY);
-			consumes.add(e);
-		}
-	}
 	
 	public static double angleBetween2Lines(int x11, int y11, int x12, int y12, int x21, int y21, int x22, int y22){
         double angle1 = Math.atan2(y11 - y12,

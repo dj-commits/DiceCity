@@ -1,13 +1,12 @@
-package com.slyvronline.game.load;
+package com.dicecity.load;
 
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
-import com.slyvronline.game.Game;
-import com.slyvronline.game.objects.Font;
+import com.dicecity.objects.Font;
+
 
 /**
  * @author Matt Schrum - slyvr89
@@ -20,7 +19,7 @@ public class LoadFonts {
 		
 		fonts.add(new Font("AgencyFbGlow32",32,new BitmapFont(Gdx.files.internal("data/fonts/AgencyFbGlow32.fnt"),false)));
 		
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/fonts/Roboto-Regular.ttf"));
+		/*FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/fonts/Roboto-Regular.ttf"));
 	    FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 	    parameter.size = 60;
 	    parameter.color = Color.WHITE;
@@ -59,6 +58,6 @@ public class LoadFonts {
 	    fonts.add(new Font("leckerli24", 24, fntLeckerliOne24));
 	    fonts.add(new Font("roboto20", 20, fntRoboto20));
 	    
-		Game.getGlobal().setFonts(fonts);
+		Game.getGlobal().setFonts(fonts);*/
 	}
 }

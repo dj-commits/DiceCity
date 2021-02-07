@@ -1,4 +1,4 @@
-package com.slyvronline.game.utils;
+package com.dicecity.utils;
 
 import com.badlogic.gdx.Input.Keys;
 
