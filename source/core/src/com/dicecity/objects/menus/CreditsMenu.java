@@ -3,7 +3,6 @@ package com.dicecity.objects.menus;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Rectangle;
 import com.dicecity.Game;
@@ -20,17 +19,6 @@ public class CreditsMenu extends Menu{
 		this.setName("credits");
 		
 		ArrayList<Ent> ents = new ArrayList<Ent>();
-		
-		/*
-		Ent bg07_1 = new Ent();
-		bg07_1.setName("bg07_1");
-		bg07_1.setImg(Game.getGlobal().getImgByName("bg07"));
-		bg07_1.setPosBox(new Rectangle(0,
-				-100,
-				bg07_1.getImg().getTex().getWidth(),
-				bg07_1.getImg().getTex().getHeight()));
-		ents.add(bg07_1);
-		*/
 		
 		ents.addAll(buildChevronBG());
 		

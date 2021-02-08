@@ -54,11 +54,11 @@ public class Global {
 			if (track.getName().equals(name)) return track;
 		return null;
 	}
-	/*public Font getFontByName(String name){
+	public Font getFontByName(String name){
 		for(Font font : fonts)
 			if (font.getName().equals(name)) return font;
 		return null;
-	}*/
+	}
 	public Menu getMenuByName(String name){
 		for(Menu menu : menus)
 			if (name.equals(menu.getName())) return menu;

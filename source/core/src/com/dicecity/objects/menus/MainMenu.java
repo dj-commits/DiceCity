@@ -25,24 +25,13 @@ public class MainMenu extends Menu{
 		
 		ArrayList<Ent> ents = new ArrayList<Ent>();
 		
-		/*
-		Ent bg07_1 = new Ent();
-		bg07_1.setName("bg07_1");
-		bg07_1.setImg(Game.getGlobal().getImgByName("bg07"));
-		bg07_1.setPosBox(new Rectangle(0,
-				-100,
-				bg07_1.getImg().getTex().getWidth(),
-				bg07_1.getImg().getTex().getHeight()));
-		ents.add(bg07_1);
-		*/
-		
 		ents.addAll(buildChevronBG());
 		
 		Ent logoTitle = new Ent();
 		logoTitle.setName("logoTitle");
 		logoTitle.setImg(Game.getGlobal().getImgByName("logoTitle"));
 		logoTitle.setPosBox(new Rectangle((int) ((Gdx.graphics.getWidth()/2)-(logoTitle.getImg().getTex().getWidth()/2)),
-				Gdx.graphics.getHeight() - logoTitle.getImg().getTex().getHeight() - 200,
+				Gdx.graphics.getHeight() - logoTitle.getImg().getTex().getHeight() - 50,
 				logoTitle.getImg().getTex().getWidth(),
 				logoTitle.getImg().getTex().getHeight()));
 		ents.add(logoTitle);
@@ -78,38 +67,12 @@ public class MainMenu extends Menu{
 				btnExit.getImg().getTex().getHeight()));
 		ents.add(btnExit);
 		
-		/*Ent btnLevelEditor = new Ent();
-		btnLevelEditor.setName("btnLevelEditor");
-		btnLevelEditor.setId(4);
-		btnLevelEditor.setImg(Game.getGlobal().getImgByName("btnLevelEditor"));
-		btnLevelEditor.setPosBox(new Rectangle((int) ((Gdx.graphics.getWidth()/2)+(btnLevelEditor.getImg().getTex().getWidth()*1.2f)),
-				btnExit.getY(),
-				btnLevelEditor.getImg().getTex().getWidth(),
-				btnLevelEditor.getImg().getTex().getHeight()));
-		if (Game.getConfig("loadLevelEdit").equals("true")){
-			ents.add(btnLevelEditor);
-		}*/
-		
-		Ent highScore = new Ent();
-		highScore.setName("highScore");
-		//highScore.setFont(Game.getGlobal().getFontByName("leckerli30"));
-		highScore.setText("High Score: ");
-		highScore.setPosBox(new Rectangle(100,100,0,0));
-		ents.add(highScore);
-		
 		this.setEnts(ents);
-		
-		updateHighScore();
 	}
 	
 	public void render(SpriteBatch batch){
 		for(Ent e : this.getEnts()){
-			if (e.getName().contains("chevron") || e.getName().contains("blackhole"))
-				e.render(batch);
-		}
-		for(Ent e : this.getEnts()){
-			if (!e.getName().contains("chevron") && !e.getName().contains("blackhole"))
-				e.render(batch);
+			e.render(batch);
 		}
 	}
 	
@@ -144,18 +107,6 @@ public class MainMenu extends Menu{
 		if (Gdx.input.isKeyJustPressed(GameConstants.KEY_QUIT)){
 			Gdx.app.exit();
 		}
-	}
-	
-	public void updateHighScore(){
-		String scoresTxt = Gdx.files.local("data/levels/scores.txt").readString();
-		String[] scores = scoresTxt.split("\n");
-		int highScore = 0;
-		for(String score : scores){
-			if (Integer.parseInt(score) > highScore){
-				highScore = Integer.parseInt(score);
-			}
-		}
-		this.getEntByName("highScore").setText("High Score: "+highScore);
 	}
 	
 	

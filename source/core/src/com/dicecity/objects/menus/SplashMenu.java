@@ -51,13 +51,13 @@ public class SplashMenu extends Menu{
 	
 	public void update(float stateTime){
 		
-		/*cycleChevronBg();
+		cycleChevronBg();
 		
 		if (startMillis==0) startMillis = System.currentTimeMillis();
 		else{
 			if (startMillis+GameConstants.SPLASH_MENU_WAIT<=System.currentTimeMillis()){
 				Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("main"));
 			}
-		}*/
+		}
 	}
 }

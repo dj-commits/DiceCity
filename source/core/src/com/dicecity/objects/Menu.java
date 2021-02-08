@@ -3,8 +3,6 @@ package com.dicecity.objects;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.dicecity.Game;
@@ -70,33 +68,6 @@ public class Menu {
 		
 	}
 	
-	public void updateControllerAxis(Controller controller, int axisCode, float value){
-		//Down
-		if (value > 0.5 && axisCode == 0){
-			if (value == 1.0){
-				downButton();
-			}
-		}
-		//Up
-		if (value < -0.5 && axisCode == 0){
-			if (value == -1.0){
-				upButton();
-			}
-		}
-		//Right
-		if (value > 0.5 && axisCode == 1){
-			if (value == 1.0){
-				
-			}
-		}
-		//Left
-		if (value < -0.5 && axisCode == 1){
-			if (value == -1.0){
-				
-			}
-		}
-	}
-	
 	public void downButton(){
 		//Navigate btn to next one down
 		Ent selected = this.getSelectedEnt();
@@ -137,10 +108,6 @@ public class Menu {
 			selected.setSelected(false);
 			if (this.getEntById(nextId) != null) this.getEntById(nextId).setSelected(true);
 		}
-	}
-	
-	public void updateControllerButtonUp(Controller controller, int buttonCode){
-		//System.out.println(controller.getName()+" - "+buttonCode+" UP");
 	}
 	
 	public void cycleChevronBg(){

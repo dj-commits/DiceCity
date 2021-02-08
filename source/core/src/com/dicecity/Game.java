@@ -9,6 +9,8 @@ import com.dicecity.load.LoadFonts;
 import com.dicecity.load.LoadGame;
 import com.dicecity.load.LoadImgs;
 import com.dicecity.load.LoadMenus;
+import com.dicecity.load.LoadMusic;
+import com.dicecity.load.LoadSfx;
 
 
 
@@ -20,11 +22,10 @@ public class Game extends ApplicationAdapter {
 	public void create () {
 		global = new Global();
 		LoadImgs.load();
-		//LoadFonts.load();
-		//LoadGame.load();
+		LoadFonts.load();
 		LoadMenus.load();
-		//LoadMusic.load();
-		//LoadSfx.load();
+		LoadMusic.load();
+		LoadSfx.load();
 	}
 
 	@Override
@@ -51,6 +52,7 @@ public class Game extends ApplicationAdapter {
 		menuBatch.begin();
 		global.getCurrentMenu().render(menuBatch);
 		menuBatch.end();
+		
 	}
 	
 	@Override

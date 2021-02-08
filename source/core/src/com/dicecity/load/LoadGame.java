@@ -1,11 +1,5 @@
 package com.dicecity.load;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.math.Rectangle;
 import com.dicecity.Game;
 import com.dicecity.objects.GameInstance;
 

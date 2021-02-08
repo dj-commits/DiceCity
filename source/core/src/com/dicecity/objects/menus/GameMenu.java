@@ -96,44 +96,9 @@ public class GameMenu extends Menu{
 	}
 	
 	public void update (float stateTime){
-		/*if (Game.getGlobal().getGame() == null){
-			Game.getGlobal().setGame(new BlackHoleInstance());
-		}*/
 		
-		//cycleChevronBg();
-		buttonDeselect();
-		endGame();
 	}
-	
-	public void endGame(){
-		if (Game.getGlobal().getGame() != null && Game.getGlobal().getGame().isPaused()){
-			if (!this.getEntByName("timeup").isDisplay()){
-				this.getEntByName("timeup").setDisplay(true);
-				
-				//Write score to scores.txt
-				String score = this.getEntByName("score").getText().replace("Score: ", "");
-				FileHandle scoresTxt = Gdx.files.local("data/levels/scores.txt");
-				scoresTxt.writeString(score+"\n", true);
-				
-				MainMenu menu = (MainMenu) Game.getGlobal().getMenuByName("main");
-				menu.updateHighScore();
-				
-				this.getEntByName("greatScore").setText("Great Score! "+score);
-				this.getEntByName("greatScore").setDisplay(true);
-				
-				this.getEntByName("btnReplay").setDisplay(true);
-				this.getEntByName("btnBack").setDisplay(true);
-				
-				this.getEntByName("score").setDisplay(false);
-				this.getEntByName("timer").setDisplay(false);
-			}
-			else {
-				updateKeyboardNavigation();
-				updateKeyboardSelect();
-			}
-		}
-	}
-	
+
 	public void buttonSelect(){
 		Ent selected = this.getSelectedEnt();
 		if (selected.getName().equals("btnReplay")){
@@ -156,17 +121,6 @@ public class GameMenu extends Menu{
 	}
 	
 	public void resetGame(){
-		this.getEntByName("scaleup").setDisplay(false);
-		this.getEntByName("timeup").setDisplay(false);
-		this.getEntByName("greatScore").setDisplay(false);
-		this.getEntByName("btnReplay").setDisplay(false);
-		this.getEntByName("btnReplay").setSelected(true);
-		this.getEntByName("btnBack").setDisplay(false);
-		this.getEntByName("btnBack").setSelected(false);
-		this.getEntByName("score").setDisplay(true);
-		this.getEntByName("timer").setDisplay(true);
-		this.getEntByName("score").setText("Score: 0");
-		this.getEntByName("timer").setText("Timer: "+GameConstants.MAX_TIMER);
-		Game.getGlobal().setGame(null);
+		
 	}
 }
