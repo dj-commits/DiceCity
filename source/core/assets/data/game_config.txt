@@ -1,2 +1,0 @@
-loadLevelEdit=false
-reloadLevel=true
