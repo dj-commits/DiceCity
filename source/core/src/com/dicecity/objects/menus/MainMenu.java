@@ -31,7 +31,7 @@ public class MainMenu extends Menu{
 		logoTitle.setName("logoTitle");
 		logoTitle.setImg(Game.getGlobal().getImgByName("logoTitle"));
 		logoTitle.setPosBox(new Rectangle((int) ((Gdx.graphics.getWidth()/2)-(logoTitle.getImg().getTex().getWidth()/2)),
-				Gdx.graphics.getHeight() - logoTitle.getImg().getTex().getHeight() - 50,
+				Gdx.graphics.getHeight() - logoTitle.getImg().getTex().getHeight()-64,
 				logoTitle.getImg().getTex().getWidth(),
 				logoTitle.getImg().getTex().getHeight()));
 		ents.add(logoTitle);
@@ -47,22 +47,12 @@ public class MainMenu extends Menu{
 		btnStart.setSelected(true);
 		ents.add(btnStart);
 		
-		Ent btnCredits = new Ent();
-		btnCredits.setName("btnCredits");
-		btnCredits.setId(2);
-		btnCredits.setImg(Game.getGlobal().getImgByName("btnCredits"));
-		btnCredits.setPosBox(new Rectangle((int) ((Gdx.graphics.getWidth()/2)-(btnCredits.getImg().getTex().getWidth()/2)),
-				btnStart.getY()-btnCredits.getImg().getTex().getHeight()-3,
-				btnCredits.getImg().getTex().getWidth(),
-				btnCredits.getImg().getTex().getHeight()));
-		ents.add(btnCredits);
-		
 		Ent btnExit = new Ent();
 		btnExit.setName("btnExit");
-		btnExit.setId(3);
+		btnExit.setId(2);
 		btnExit.setImg(Game.getGlobal().getImgByName("btnExit"));
 		btnExit.setPosBox(new Rectangle((int) ((Gdx.graphics.getWidth()/2)-(btnExit.getImg().getTex().getWidth()/2)),
-				btnCredits.getY()-btnExit.getImg().getTex().getHeight()-3,
+				btnStart.getY()-btnExit.getImg().getTex().getHeight()-3,
 				btnExit.getImg().getTex().getWidth(),
 				btnExit.getImg().getTex().getHeight()));
 		ents.add(btnExit);
@@ -77,29 +67,24 @@ public class MainMenu extends Menu{
 	}
 	
 	public void update(float stateTime){
-		updateKeyboardNavigation();
-		updateKeyboardSelect();
+		//updateKeyboardNavigation();
+		//updateKeyboardSelect();
+		updateMouseHover();
+		updateMouseSelect();
 		cycleChevronBg();
 	}
 	
 	public void buttonSelect(){
 		Ent selected = this.getSelectedEnt();
-		if (selected.getName().equals("btnStart")){
-			Game.getGlobal().getSfxByName("papery").play();
-			Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("game"));
-			Game.getGlobal().setGame(null);
-		}
-		if (selected.getName().equals("btnCredits")){
-			Game.getGlobal().getSfxByName("papery").play();
-			Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("credits"));
-		}
-		if (selected.getName().equals("btnExit")){
-			Gdx.app.exit();
-		}
-		if (selected.getName().equals("btnLevelEditor")){
-			Game.getGlobal().getSfxByName("papery").play();
-			Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("leveledit"));
-			Game.getGlobal().setGame(null);
+		if (selected != null) {
+			if (selected.getName().equals("btnStart")){
+				Game.getGlobal().getSfxByName("paperflip").play();
+				Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("game"));
+				Game.getGlobal().setGame(null);
+			}
+			if (selected.getName().equals("btnExit")){
+				Gdx.app.exit();
+			}
 		}
 	}
 	

@@ -60,6 +60,29 @@ public class Menu {
 		}
 	}
 	
+	public void updateMouseHover() {
+		Rectangle mousePos = new Rectangle(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),1,1);
+		for (Ent e : ents) {
+			if (mousePos.overlaps(e.getPosBox())) {
+				e.setSelected(true);
+			}
+			else {
+				e.setSelected(false);
+			}
+		}
+	}
+	
+	public void updateMouseSelect() {
+		if (Gdx.input.isTouched()) {
+			Rectangle mousePos = new Rectangle(Gdx.input.getX(),Gdx.graphics.getHeight()-Gdx.input.getY(),1,1);
+			for(Ent e : ents) {
+				if (mousePos.overlaps(e.getPosBox())) {
+					buttonSelect();
+				}
+			}
+		}
+	}
+	
 	public void buttonSelect(){
 		
 	}
