@@ -46,6 +46,7 @@ public class Ent {
 	private boolean rotate;
 	private int scaleX;
 	private int scaleY;
+	private float scale;
 	private boolean flipX;
 	private boolean flipY;
 	private float animSpeed;
@@ -67,6 +68,7 @@ public class Ent {
 		this.display = true;
 		this.flipX = false;
 		this.flipY = false;
+		this.scale = 1;
 	}
 	
 	public Ent(Ent ent){
@@ -84,6 +86,7 @@ public class Ent {
 		this.rotation = ent.getRotation();
 		this.scaleX = ent.getScaleX();
 		this.scaleY = ent.getScaleY();
+		this.scale = ent.getScale();
 		this.animSpeed = ent.getAnimSpeed();
 		this.display = ent.isDisplay();
 		this.state = ent.getState();
@@ -102,8 +105,8 @@ public class Ent {
 					batch.draw(this.getImg().getCurrentFrame(),
 							this.getX(),
 							this.getY(),
-							this.getWidth(),
-							this.getHeight());
+							this.getWidth()*this.getScale(),
+							this.getHeight()*this.getScale());
 				}
 				else{
 				
@@ -131,8 +134,8 @@ public class Ent {
 							this.getY(),
 							this.getCenterX(),
 							this.getCenterY(),
-							this.getWidth(),
-							this.getHeight(),
+							this.getWidth()*this.getScale(),
+							this.getHeight()*this.getScale(),
 							this.getScaleX(),
 							this.getScaleY(),
 							this.getRotation(),
@@ -342,4 +345,11 @@ public class Ent {
 	public void setRotate(boolean rotate) {
 		this.rotate = rotate;
 	}
+	public float getScale() {
+		return scale;
+	}
+	public void setScale(float scale) {
+		this.scale = scale;
+	}
+	
 }

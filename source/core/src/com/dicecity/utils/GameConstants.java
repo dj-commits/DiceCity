@@ -20,4 +20,6 @@ public class GameConstants {
 	public static final int SEC_KEY_B = Keys.SLASH;
 	public static final int KEY_QUIT = Keys.ESCAPE;
 	public static final int MAX_TIMER = 60;
+	public static final int CARD_HEIGHT = 330;
+	public static final int CARD_WIDTH = 256;
 }

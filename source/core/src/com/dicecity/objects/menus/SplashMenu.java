@@ -8,6 +8,7 @@ import com.dicecity.Game;
 import com.dicecity.objects.Ent;
 import com.dicecity.objects.Menu;
 import com.dicecity.utils.GameConstants;
+import com.dicecity.utils.GameUtils;
 
 
 public class SplashMenu extends Menu{
@@ -22,7 +23,7 @@ public class SplashMenu extends Menu{
 		
 		ArrayList<Ent> ents = new ArrayList<Ent>();
 		
-		ents.addAll(buildChevronBG());
+		ents.addAll(GameUtils.buildChevronBG());
 		
 		Ent logo = new Ent();
 		logo.setName("logo");

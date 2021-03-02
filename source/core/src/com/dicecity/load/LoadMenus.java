@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.dicecity.Game;
 import com.dicecity.objects.Menu;
 import com.dicecity.objects.menus.GameMenu;
+import com.dicecity.objects.menus.GamePauseMenu;
 import com.dicecity.objects.menus.MainMenu;
 import com.dicecity.objects.menus.SplashMenu;
 
@@ -24,6 +25,7 @@ public class LoadMenus {
 		menus.add(new SplashMenu());
 		menus.add(new MainMenu());
 		menus.add(new GameMenu());
+		menus.add(new GamePauseMenu());
 		
 		Game.getGlobal().setMenus(menus);
 		Game.getGlobal().setCurrentMenu(menus.get(0));

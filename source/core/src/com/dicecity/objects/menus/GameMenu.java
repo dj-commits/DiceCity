@@ -27,7 +27,7 @@ public class GameMenu extends Menu{
 	
 	public void update (float stateTime){
 		if (Gdx.input.isKeyJustPressed(GameConstants.KEY_QUIT)) {
-			Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("main"));
+			Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("gamepause"));
 		}
 	}
 

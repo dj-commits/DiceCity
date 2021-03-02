@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.dicecity.Game;
+import com.dicecity.objects.DiceCityGameInstance;
 import com.dicecity.objects.Ent;
 import com.dicecity.objects.Menu;
 import com.dicecity.utils.GameConstants;
@@ -25,7 +26,7 @@ public class MainMenu extends Menu{
 		
 		ArrayList<Ent> ents = new ArrayList<Ent>();
 		
-		ents.addAll(buildChevronBG());
+		ents.addAll(GameUtils.buildChevronBG());
 		
 		Ent logoTitle = new Ent();
 		logoTitle.setName("logoTitle");
@@ -44,7 +45,6 @@ public class MainMenu extends Menu{
 				logoTitle.getY()-btnStart.getImg().getTex().getHeight()-3,
 				btnStart.getImg().getTex().getWidth(),
 				btnStart.getImg().getTex().getHeight()));
-		btnStart.setSelected(true);
 		ents.add(btnStart);
 		
 		Ent btnExit = new Ent();
@@ -80,7 +80,7 @@ public class MainMenu extends Menu{
 			if (selected.getName().equals("btnStart")){
 				Game.getGlobal().getSfxByName("paperflip").play();
 				Game.getGlobal().setCurrentMenu(Game.getGlobal().getMenuByName("game"));
-				Game.getGlobal().setGame(null);
+				Game.getGlobal().setGame(new DiceCityGameInstance());
 			}
 			if (selected.getName().equals("btnExit")){
 				Gdx.app.exit();
